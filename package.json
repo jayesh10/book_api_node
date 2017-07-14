@@ -1,0 +1,23 @@
+{
+  "name": "apiproject",
+  "version": "1.0.0",
+  "description": "car dealer",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jayesh10/book_api_node.git"
+  },
+  "keywords": [
+    "nodemon"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jayesh10/book_api_node/issues"
+  },
+  "homepage": "https://github.com/jayesh10/book_api_node#readme"
+}
