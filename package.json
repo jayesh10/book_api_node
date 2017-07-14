@@ -2,7 +2,7 @@
   "name": "apiproject",
   "version": "1.0.0",
   "description": "car dealer",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/jayesh10/book_api_node#readme",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.3",
+    "mongoose": "^4.11.2",
     "morgan": "^1.8.2"
   }
 }

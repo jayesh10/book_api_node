@@ -1,17 +1,20 @@
 const express = require('express');
 const logger = require('morgan');
 const app = express();
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+
+mongoose.connect('mongodb://localhost/apiproject');
+//routes
+const users = require('./routes/users')
 
 
 //Middlewares
 app.use(logger('dev'));
+app.use(bodyParser.json());
 
-//Routes
-app.get('/',function(req,res,next){
-  res.status(200).json({
-    message : 'you requested index page'
-  })
-});
+//routes
+app.use('/users',users);
 
 //catch 404 error and froward tem to erro handler
 app.use(function(req,res,next){
@@ -28,7 +31,7 @@ app.use(function(err,req,res,next){
 
     //respond to client
 
-    rs.status(status).json({
+    res.status(status).json({
       error:{
         message:error.message
       }
@@ -40,5 +43,5 @@ app.use(function(err,req,res,next){
 
 
 //start the server
-const port  = app.get('port') || 3000;
-app.listen(port,() =>console.log("server is listenig on port: "));
+const port  = 3000;
+app.listen(port,() =>console.log("server is listenig on port: ",port));
