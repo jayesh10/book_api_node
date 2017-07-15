@@ -22,14 +22,8 @@ const  index  = function(req,res,next){
 }
 */
 const  index  = async function(req,res,next){
-  try{
-    const user =await  User.find({});
+    const user = await User.find({});
     res.status(200).json(user);
-  }
-  catch(err)
-  {
-    next(err);
-  }
 }
 
 //promise
@@ -44,7 +38,15 @@ const newUser = function(req,res,next){
   })
 }
 
+const getUser = async function(req,res,next){
+  const userId = req.params.userId;
+  const user= await User.findById(userId);
+  res.status(200).json(user);
+
+}
+
 module.exports ={
   index,
-  newUser
+  newUser,
+  getUser
 }
