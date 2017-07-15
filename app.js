@@ -4,7 +4,8 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
-mongoose.connect('mongodb://localhost/apiproject');
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/apiproject',{useMongoClient: true});
 //routes
 const users = require('./routes/users')
 
