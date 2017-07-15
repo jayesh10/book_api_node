@@ -45,8 +45,34 @@ const getUser = async function(req,res,next){
 
 }
 
+const replaceUser = async function(req,res,next){
+  const userId = req.params.userId;
+  const newUser = req.body;
+
+  const result = await User.findByIdAndUpdate(userId,newUser);
+  res.status(200).json({
+    suucess: true,
+    message : "user updated"
+  });
+
+}
+const updateUser = async function(req,res,next){
+  const userId = req.params.userId;
+  const newUser = req.body;
+
+  const result = await User.findByIdAndUpdate(userId,newUser);
+  res.status(200).json({
+    suucess: true,
+    message : "user updated"
+  });
+
+}
+
+
 module.exports ={
   index,
   newUser,
-  getUser
+  getUser,
+  replaceUser,
+  updateUser
 }
